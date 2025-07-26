@@ -9,7 +9,8 @@ import easyocr
 reader = easyocr.Reader(['en'], gpu=False)
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://www.blsspainmorocco.net"}}, supports_credentials=True)
+
 
 def base64_to_image(base64_image):
     try:
